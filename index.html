@@ -351,12 +351,10 @@
 
             currentRating = 0;
             stars.forEach(star => star.classList.remove('filled'));
-            
-            // Обновляем состояние кнопок
+
             updateNavigationButtons();
         }
 
-        // Добавляем обработчики событий для кнопок
         leftButton.addEventListener('click', () => {
             if (!leftButton.classList.contains('disabled')) {
                 changeItem('left');
@@ -369,7 +367,6 @@
             }
         });
 
-        // Функция для обновления состояния кнопок навигации
         function updateNavigationButtons() {
             leftButton.classList.toggle('disabled', currentItemIndex === 0 || currentRating === 0);
             rightButton.classList.toggle('disabled', currentItemIndex === items.length - 1 || currentRating === 0);
@@ -405,12 +402,10 @@
                         s.classList.remove('filled');
                     }
                 });
-                // Обновляем состояние кнопок после установки рейтинга
                 updateNavigationButtons();
             });
         });
 
-        // Инициализация начального состояния
         if (items.length > 0) {
             itemImage.src = items[0].image;
             updateNavigationButtons();
